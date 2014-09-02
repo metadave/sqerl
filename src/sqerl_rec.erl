@@ -489,7 +489,7 @@ gen_fetch_page(RecName, OrderBy) ->
 %% SQL = ["SELECT ", "id, name", " FROM ", "kitchens",
 %%        " ORDER BY ", "name"]
 %% '''
--spec gen_fetch_all(atom(), atom()) -> [string()].
+-spec gen_fetch_all(atom(), atom() | [atom()]) -> [string()].
 gen_fetch_all(RecName, OrderBy) ->
     AllFields = map_to_str(RecName:fields()),
     FieldsSQL = string:join(AllFields, ", "),
